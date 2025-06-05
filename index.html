@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GTM Button Click Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .btn {
+            padding: 15px 30px;
+            margin: 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+        #blueBtn {
+            background-color: #4285F4; /* Google blue */
+        }
+        #redBtn {
+            background-color: #EA4335; /* Google red */
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 40px;
+        }
+    </style>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXXXX');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <h1>GTM Button Click Test</h1>
+    
+    <button id="blueBtn" class="btn">Blue Button</button>
+    <button id="redBtn" class="btn">Red Button</button>
+    
+    <script>
+        document.getElementById('blueBtn').addEventListener('click', function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonColor': 'blue',
+                'buttonText': this.textContent
+            });
+            alert('Blue button clicked! Check GTM for the event.');
+        });
+        
+        document.getElementById('redBtn').addEventListener('click', function() {
+            window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+                'event': 'buttonClick',
+                'buttonColor': 'red',
+                'buttonText': this.textContent
+            });
+            alert('Red button clicked! Check GTM for the event.');
+        });
+    </script>
+</body>
+</html>
