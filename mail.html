@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Coleman Creative Services</title>
+    <style type="text/css">
+        /* Client-specific resets */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { mso-table-lspace: 0pt; mso-table-rspace: 0pt; }
+        img { -ms-interpolation-mode: bicubic; border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; }
+        
+        /* Reset styles */
+        body { margin: 0 !important; padding: 0 !important; width: 100% !important; }
+        
+        /* iOS blue links */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+        
+        /* Main styles */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333333;
+            background-color: #f5f5f5;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            padding: 30px;
+            color: #ffffff;
+            background-color: #004AAF;
+            font: normal normal bold 12px/17px Open Sans;
+        }
+        
+        .domain {
+            text-align: center;
+            font-size: 16px;
+            color: #666666;
+            padding-bottom: 20px;
+        }
+        
+        .content-block {
+            background-color: #ffffff;
+            padding: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #000000;
+            text-align: center;
+            margin: 0 0 20px 0;
+            font: normal normal normal 24px/32px Times New Roman;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0 0 20px 0;
+        }
+        
+        .divider {
+            height: 1px;
+            background-color: #eeeeee;
+            margin: 30px 0;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .card {
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2a5885;
+            margin: 0 0 15px 0;
+        }
+        
+        .card-text {
+            font-size: 15px;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
+        
+        .card-button {
+            display: inline-block;
+            background-color: #2a5885;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        /* Responsive columns */
+        @media screen and (min-width: 480px) {
+            .card-columns {
+                display: table;
+                width: 100%;
+            }
+            .card-column {
+                display: table-cell;
+                width: 33.33%;
+                padding: 0 10px;
+                vertical-align: top;
+            }
+            .card-column:first-child {
+                padding-left: 0;
+            }
+            .card-column:last-child {
+                padding-right: 0;
+            }
+        }
+        
+        @media screen and (max-width: 479px) {
+            .card-column {
+                display: block;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .cta-title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0 20px 0;
+            text-transform: uppercase;
+        }
+        
+        .feature-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2a5885;
+            margin: 30px 0 15px 0;
+        }
+        
+        .button {
+            display: block;
+            width: 200px;
+            background-color: #2a5885;
+            color: #ffffff;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 0;
+            margin: 25px auto;
+            border-radius: 4px;
+        }
+        
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #999999;
+            padding: 20px 0;
+            line-height: 1.5;
+        }
+        
+        .footer-links {
+            margin: 15px 0;
+        }
+        
+        .footer-links a {
+            color: #999999;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .social-connect {
+            text-align: center;
+            margin: 30px 0 15px;
+            font-weight: bold;
+        }
+        
+        /* Responsive styles */
+        @media screen and (max-width: 480px) {
+            .email-container {
+                width: 100% !important;
+            }
+            
+            .content-block {
+                padding: 20px !important;
+            }
+            
+            .header {
+                font-size: 20px !important;
+                padding: 20px 0 10px !important;
+            }
+            
+            .section-title {
+                font-size: 18px !important;
+            }
+            
+            p {
+                font-size: 14px !important;
+            }
+            
+            .button {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0;">
+    <!-- Email wrapper -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td align="center" style="padding: 20px 0;">
+                <!-- Email container -->
+                <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600">
+                    <!-- Header -->
+                    <tr>
+                        <td class="header">
+                            MICHAEL COLEMAN CREATIVE SERVICES
+                        </td>
+                    </tr>
+                    
+                    <!-- Domain -->
+                    <tr>
+                        <td class="domain">
+                        <!-- code -->
+                            <video src="MC_Hero_Animation.mp4" type="video/mp4" poster="MC_Hero_Animation_PosterImage.png" width="600" height="200" loop autoplay>
+                                Sorry, your browser doesn't support HTML5 video tag.
+                            </video>
+
+                        </td>
+                    </tr>
+                    
+                    <!-- Content block -->
+                    <tr>
+                        <td class="content-block">
+                            <h1 class="section-title">We've Upgraded</h1>
+                            
+                            <p style="text-align: center; font: normal normal normal 10px/18px Open Sans;" >We’ve officially moved .net to michaelcoleman.com — and that’s just the beginning. The same creative team you trust now comes with tighter processes, broader capabilities, and a smoother way to work together. Because when we upgrade, so do our clients.</p>
+                            
+                            <a href="#" class="card-button" style="margin: auto;display: flex;
+    width: 100px; background: var(---004aaf) 0% 0% no-repeat padding-box;
+background: #004AAF 0% 0% no-repeat padding-box; background-color: #004AAF; font: normal normal bold 10px/14px Open Sans; text-align: center;">CONNECT WITH US</a>
+
+                        </td>
+                    </tr>
+
+                     <tr>
+                        <td class="content-block" style="background: var(---004aaf) 0% 0% no-repeat padding-box;
+background: #004AAF 0% 0% no-repeat padding-box;
+border-radius: 41px 0px 0px 0px;">
+                            <h1 class="section-title" style="font: italic normal normal 13px/16px Times New Roman; text-align: left;">Capabilities</h1>
+                            
+                            <p style="text-align: left;
+font: normal normal bold 14px/18px Open Sans;
+letter-spacing: 0px;
+color: #D1F949;" >We design more than just collateral and ads.</p>
+                            
+                            <a href="#" class="card-button" style="font: normal normal bold 10px/14px Open Sans;
+letter-spacing: 1px;
+color: #FFFFFF;">SEE OUR WORK</a>
+
+                        </td>
+                    </tr>
+
+
+                     <tr>
+                        <td align="center" style="padding: 20px 0;">
+                            <!-- Email container -->
+                            <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600">
+                                <!-- Card Section -->
+                                <tr>
+                                    <td style="padding: 20px 0;">
+                                        <!--[if (gte mso 9)|(IE)]>
+                                        <table width="100%" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                        <td width="33%" valign="top">
+                                        <![endif]-->
+                                        <div class="card-columns">
+                                            <div class="card-column">
+                                                <div class="card">
+                                                    <!-- Image placeholder -->
+                                                    <div style="height: 150px; background: #f0f0f0; margin-bottom: 15px;"></div>
+                                                    <h3 class="card-title">Our Creative Team</h3>
+                                                    <p class="card-text">Meet the talented professionals behind our creative solutions.</p>
+                                                </div>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td><td width="33%" valign="top">
+                                            <![endif]-->
+                                            <div class="card-column">
+                                                <div class="card">
+                                                    <h3 class="card-title">Flexibility</h3>
+                                                    <p class="card-text">Collaborate with our creative team however works best for you.</p>
+                                                    <p class="card-text">One simple rate, full access to everything we offer; hourly as needed, pre-paid for savings, or on retainer for max momentum.</p>
+                                                    <a href="#" class="card-button">EXPLORE PRICING</a>
+                                                </div>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td><td width="33%" valign="top">
+                                            <![endif]-->
+                                            <div class="card-column">
+                                                <div class="card">
+                                                    <h3 class="card-title">Stability</h3>
+                                                    <p class="card-text">It's creative work without the chaos.</p>
+                                                    <p class="card-text">We've added leadership and streamlined processes. Start projects with a quick email and track progress through weekly updates.</p>
+                                                    <a href="#" class="card-button">GET STARTED</a>
+                                                </div>
+                                            </div>
+                                            <!--[if (gte mso 9)|(IE)]>
+                                            </td>
+                                            </tr>
+                                            </table>
+                                        <![endif]-->
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="content-block">
+
+                            <div class="social-connect">
+                                Connect and Stay Social<br>
+                                MICHAELCOLEMAN.COM
+                            </div>
+
+                        </td>
+                    </tr>
+
+                    
+                    <!-- Footer -->
+                    <tr>
+                        <td class="footer">
+                            <div class="footer-links">
+                                <a href="#">Unsubscribe</a> | 
+                                <a href="#">View in Browser</a> | 
+                                <a href="#">Contact Us</a>
+                            </div>
+                            © 2025 Michael Coleman Creative Services
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

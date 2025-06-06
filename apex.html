@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Coleman Creative Services</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #2a5885;
+            --secondary: #4a90e2;
+            --dark: #333;
+            --light: #f5f5f5;
+            --gray: #666;
+            --light-gray: #eee;
+            --card-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Card Grid Layout */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .image-card {
+            grid-column: span 1;
+        }
+        
+        .text-card {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* ASPEN Section Header */
+        .aspen-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .aspen-title {
+            font-size: 42px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .aspen-subtitle {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .aspen-subtitle strong {
+            color: var(--secondary);
+        }
+        
+        .file-info {
+            color: var(--gray);
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        
+        .file-path {
+            font-family: monospace;
+            background: var(--light-gray);
+            padding: 5px 10px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+        
+        /* Card Content Styles */
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .card-text {
+            margin-bottom: 20px;
+        }
+        
+        .divider {
+            border: 0;
+            height: 1px;
+            background: var(--light-gray);
+            margin: 25px 0;
+        }
+        
+        /* Button Styles */
+        .card-button {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: auto;
+            transition: background-color 0.3s;
+        }
+        
+        .card-button:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Image Card Specific */
+        .image-placeholder {
+            height: 300px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray);
+            font-weight: bold;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .aspen-title {
+                font-size: 32px;
+            }
+            
+            .aspen-subtitle {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ASPEN Section -->
+        <div class="aspen-section">
+            <div class="aspen-header">
+                <h1 class="aspen-title">ASPEN</h1>
+                <h2 class="aspen-subtitle">RICE <strong>SOCIAL USE</strong></h2>
+                
+                <div class="file-info">
+                    <div>File: 1857-2024-13</div>
+                    <div class="file-path">C:\Users\ASPEN\Desktop\Apps\Desktop.exe</div>
+                </div>
+            </div>
+            
+            <!-- 3-Card Grid -->
+            <div class="card-grid">
+                <!-- Image Card -->
+                <div class="card image-card">
+                    <div class="image-placeholder">
+                        [ASPEN Image Here]
+                    </div>
+                </div>
+                
+                <!-- Text Card 1 -->
+                <div class="card text-card">
+                    <h3 class="card-title">Flexibility</h3>
+                    <p class="card-text">Collaborate with our creative team however works best for you.</p>
+                    <p class="card-text">One simple rate, full access to everything we offer; hourly as needed, pre-paid for savings, or on retainer for max momentum.</p>
+                    
+                    <hr class="divider">
+                    
+                    <a href="#" class="card-button">EXPLORE PRICING</a>
+                </div>
+                
+                <!-- Text Card 2 -->
+                <div class="card text-card">
+                    <h3 class="card-title">Stability</h3>
+                    <p class="card-text">It's creative work without the chaos.</p>
+                    <p class="card-text">We've added leadership and streamlined processes. Start projects with a quick email and track progress through weekly updates.</p>
+                    
+                    <hr class="divider">
+                    
+                    <a href="#" class="card-button">GET STARTED</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

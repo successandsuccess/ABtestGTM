@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Custom MP4 Segment Player</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    video { width: 100%; max-width: 800px; display: block; margin-bottom: 10px; }
+    .controls { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .controls input { padding: 5px; }
+  </style>
+</head>
+<body>
+  <h2>MP4 Segment Player</h2>
+  <video id="video" muted></video>
+
+  <div class="controls">
+    <button onclick="player.play()">Play</button>
+    <button onclick="player.pause()">Pause</button>
+    <button onclick="player.stop()">Stop</button>
+    <button onclick="player.mute()">Mute</button>
+    <button onclick="player.volumeUp()">Volume +</button>
+    <button onclick="player.volumeDown()">Volume -</button>
+    <input type="datetime-local" id="datetime" />
+    <button onclick="jumpToDatetime()">Set Position</button>
+    <button onclick="jumpHours(1)">+1hr</button>
+    <button onclick="jumpHours(-1)">-1hr</button>
+  </div>
+
+  <script>
+    class MP4SegmentPlayer {
+      constructor(videoElement) {
+        this.video = videoElement;
+        this.segments = [];
+        this.currentIndex = 0;
+        this.isPlayingFlag = false;
+        this.isMuted = true;
+        this.buffering = false;
+      }
+
+      async setSource(apiUrl) {
+        const res = await fetch(apiUrl);
+        const json = await res.json();
+        this.segments = json.objects.sort((a, b) => new Date(a.start) - new Date(b.start));
+        this.currentIndex = 0;
+        if (this.segments.length) {
+          this._loadSegment(this.currentIndex);
+        }
+      }
+
+      getSource() {
+        return this.segments;
+      }
+
+      setPosition(datetimeStr) {
+        const dt = new Date(datetimeStr);
+        const idx = this.segments.findIndex(s => new Date(s.start) <= dt && new Date(s.end) > dt);
+        if (idx !== -1) {
+          this.currentIndex = idx;
+          this._loadSegment(idx);
+        }
+      }
+
+      getPosition() {
+        return this.video.currentTime;
+      }
+
+      play() {
+        this.isPlayingFlag = true;
+        this.video.play();
+      }
+
+      pause() {
+        this.isPlayingFlag = false;
+        this.video.pause();
+      }
+
+      stop() {
+        this.pause();
+        this.video.currentTime = 0;
+      }
+
+      destroy() {
+        this.stop();
+        this.video.src = '';
+        this.segments = [];
+      }
+
+      mute() {
+        this.video.muted = !this.video.muted;
+        this.isMuted = this.video.muted;
+      }
+
+      volume(value) {
+        this.video.volume = Math.min(1, Math.max(0, value));
+      }
+
+      volumeUp() {
+        this.volume(this.video.volume + 0.1);
+      }
+
+      volumeDown() {
+        this.volume(this.video.volume - 0.1);
+      }
+
+      isPlaying() {
+        return !this.video.paused;
+      }
+
+      _loadSegment(index) {
+        const segment = this.segments[index];
+        if (segment) {
+          this.video.src = segment.url;
+          this.video.load();
+          if (this.isPlayingFlag) {
+            this.video.play();
+          }
+        }
+      }
+    }
+
+    const player = new MP4SegmentPlayer(document.getElementById('video'));
+    player.setSource('/api/segments'); // Local Python proxy endpoint
+
+    document.getElementById('video').addEventListener('ended', () => {
+      player.currentIndex++;
+      if (player.currentIndex < player.segments.length) {
+        player._loadSegment(player.currentIndex);
+      }
+    });
+
+    function jumpToDatetime() {
+      const datetime = document.getElementById('datetime').value;
+      if (datetime) player.setPosition(datetime);
+    }
+
+    function jumpHours(delta) {
+      const current = new Date(document.getElementById('datetime').value);
+      current.setHours(current.getHours() + delta);
+      document.getElementById('datetime').value = current.toISOString().slice(0, 16);
+      player.setPosition(current.toISOString());
+    }
+  </script>
+</body>
+</html>
